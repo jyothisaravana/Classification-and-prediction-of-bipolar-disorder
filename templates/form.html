@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Bipolar disorder</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+ 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename= 'style.css') }}">
+<script src="{{ url_for('static', filename='js/form.js') }}"></script>
+</head>
+
+<body>
+    <script>
+      
+      
+      function form_reset(){
+             document.getElementById("cform").reset();
+            
+             document.getElementById('successAlert').innerHTML = "";
+             
+             document.getElementById('errorAlert').innerHTML = "";
+    
+      }
+
+    </script>
+ <div class="login">
+	<h1>Bipolar disorder Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form id = "cform">
+        <input type="text" id = "patient" name="patient" placeholder="Patient Name"/>
+        <select id="mood" name="mood">
+            <option value="" disabled selected>Mood</option>
+            <option value="-3">-3</option>
+            <option value="-2">-2</option>
+            <option value="-1">-1</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>  
+          </select>
+          <select id="motivation" name="motivation">
+            <option value="" disabled selected>Motivation</option>
+            <option value="-3">-3</option>
+            <option value="-2">-2</option>
+            <option value="-1">-1</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>  
+          </select>
+          <select id="attention" name="attention">
+            <option value="" disabled selected>Attention</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option> 
+        </select>
+        <select id="irritability" name="irritability">
+            <option value="" disabled selected>Irritability</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option> 
+            </select>
+        <select id="anxiety" name="anxiety">
+            <option value="" disabled selected>Anxiety</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option> 
+            </select> 
+         <select id="sleep_quantity" name="sleep_quantity">
+            <option value="" disabled selected>Sleep Quantity</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option> 
+            </select>
+
+        <input type="text" id = "cig" name="cig" placeholder="Number of cigarettes somked?"  />
+        <input type="text" id = "caf" name="caf" placeholder="Number of caffeine ingested?"  />
+        <input type="text" id = "wake" name="wake" placeholder="When did the patient wake up?(hh:ww)"  />
+        <input type="text" id = "sleep" name="sleep" placeholder="When did the patient go to bed? (hh:mm)" />
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        
+    </form>
+     <br>
+     <button  id = "reset" type="submit" class="btn btn-primary btn-block btn-large" onclick ='form_reset()'>Reset</button>    
+    <br>
+   
+   <div id="successAlert" class="alert alert-success" role="alert" style="display:none;"></div>
+   <div id="errorAlert" class="alert alert-danger" role="alert" style="display:none;"></div>
+   <br>
+
+ </div>
+
+
+</body>
+</html>
