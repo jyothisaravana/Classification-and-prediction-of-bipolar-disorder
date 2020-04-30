@@ -1,4 +1,11 @@
-
+ function form_reset(){
+             document.getElementById("cform").reset();
+            
+             document.getElementById('successAlert').innerHTML = "";
+             
+             document.getElementById('errorAlert').innerHTML = "";
+    
+      }
 
 $(document).ready(function() {
 	 
