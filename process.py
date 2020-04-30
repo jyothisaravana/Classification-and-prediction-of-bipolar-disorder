@@ -10,7 +10,7 @@ if not sys.warnoptions:
 
 
 app = Flask(__name__)
-model = pickle.load(open('C:/Users/Jyothi/Desktop/Algorithm/project1/rf.pkl','rb'))
+model = pickle.load(open('rf.pkl','rb'))
 
 
 @app.route('/')
