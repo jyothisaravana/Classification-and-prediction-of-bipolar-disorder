@@ -1,12 +1,3 @@
- function form_reset(){
-             document.getElementById("cform").reset();
-            
-             document.getElementById('successAlert').innerHTML = "";
-             
-             document.getElementById('errorAlert').innerHTML = "";
-    
-      }
-
 $(document).ready(function() {
 	 
 	$('form').on('submit', function(event) {
@@ -40,6 +31,14 @@ $(document).ready(function() {
 				$('#errorAlert').hide();
 			}
 
+		});
+		
+		$("#reset-btn").click(function(){
+		
+			$("#cform").trigger("reset");
+			$('#errorAlert').hide();
+			$('#successAlert').hide();
+	
 		});
 
 		event.preventDefault();
